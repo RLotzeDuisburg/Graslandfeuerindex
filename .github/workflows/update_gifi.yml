@@ -1,0 +1,32 @@
+name: Graslandfeuerindex aktualisieren
+
+on:
+  schedule:
+    # DWD veröffentlicht die Vorhersage täglich gegen 04:15 Uhr MEZ/MESZ.
+    # 3:30 und 6:30 UTC decken beide Zeitzonen sicher ab.
+    - cron: '30 3,6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Daten abrufen
+        run: python scripts/update_glfi.py
+
+      - name: Änderungen committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/glfi.json
+          git diff --staged --quiet || git commit -m "Graslandfeuerindex aktualisiert"
+          git push
