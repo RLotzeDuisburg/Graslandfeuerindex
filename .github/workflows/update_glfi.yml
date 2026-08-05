@@ -6,7 +6,7 @@ on:
     # - cron: '25 4,6,10 * * *'
     #  timezone: 'Europe/Berlin'
 
-    - cron: '*/5 * * * *'
+    - cron: '2/5 * * * *'
       timezone: 'Europe/Berlin'
 
 
