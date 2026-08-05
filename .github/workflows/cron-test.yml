@@ -2,7 +2,7 @@ name: Cron-Test
 
 on:
   schedule:
-    - cron: '2/5 * * * *'
+    - cron: '*/5 * * * *'
 
   workflow_dispatch:
 
@@ -13,6 +13,5 @@ jobs:
     steps:
       - name: Zeitpunkt ausgeben
         run: |
-          echo "Auslöser: ${{ github.event_name }}"
-          echo "UTC-Zeit:"
+          echo "Ereignis: ${{ github.event_name }}"
           date -u
