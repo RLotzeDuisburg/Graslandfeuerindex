@@ -2,7 +2,7 @@ name: Graslandfeuerindex aktualisieren
 
 on:
   schedule:
-    # Täglich um 04:45 Uhr und 06:45 Uhr deutscher Ortszeit.
+    # Täglich um 04:25 Uhr, 06:25 Uhr und 10:25 Uhr deutscher Ortszeit.
     - cron: '25 4,6,10 * * *'
       timezone: 'Europe/Berlin'
 
