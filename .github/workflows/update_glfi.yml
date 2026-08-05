@@ -9,8 +9,6 @@ on:
     - cron: '*/5 * * * *'
       timezone: 'Europe/Berlin'
 
-  workflow_dispatch:
-    
 
   # Ermöglicht einen manuellen Test.
   workflow_dispatch:
