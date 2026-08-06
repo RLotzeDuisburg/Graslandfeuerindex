@@ -2,7 +2,8 @@ name: Graslandfeuerindex aktualisieren
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '2/5 00-23 * * *'
+
     
   # Ermöglicht einen manuellen Test.
   workflow_dispatch:
