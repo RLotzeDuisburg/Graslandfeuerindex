@@ -3,12 +3,8 @@ name: Graslandfeuerindex aktualisieren
 on:
   schedule:
     # Täglich um 04:25 Uhr, 06:25 Uhr und 10:25 Uhr deutscher Ortszeit.
-    # - cron: '25 4,6,10 * * *'
-    #  timezone: 'Europe/Berlin'
-
-    - cron: '2/5 * * * *'
-      timezone: 'Europe/Berlin'
-
+    - cron: '25 0,2,4,6,8,10,12,14,16,18,20,22 * * *'
+     timezone: 'Europe/Berlin'
 
   # Ermöglicht einen manuellen Test.
   workflow_dispatch:
