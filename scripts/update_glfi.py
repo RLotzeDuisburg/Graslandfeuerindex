@@ -32,7 +32,7 @@ def build_payload(row):
     termin = row[1]  # Format "YYYYMMDD HH:MM"
     base_date = date(int(termin[0:4]), int(termin[4:6]), int(termin[6:8]))
     days = []
-    for i in range(6):  # glfi_0 (heute) .. glfi_5 (heute + 5 Tage)
+    for i in range(7):  # glfi_0 (heute) .. glfi_6 (heute + 6 Tage)
         days.append({
             "date": (base_date + timedelta(days=i)).isoformat(),
             "stufe": int(row[2 + i]),
